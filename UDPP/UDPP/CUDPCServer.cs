@@ -6,20 +6,21 @@ using UDPP;
 
 namespace UDP
 {
-    public class CUDPServer
+    public class CUDPServer : ICS
     {          
 
         public void execute()
         {
             Base @base = new Base();
 
-            IPAddress ipAdress = @base.GetIPAdress();
-            int port = @base.GetPort();
+            IPAddress ipAdress = @base.getIPAdress();
+            int port = @base.getPort();
+            UdpClient listener;
 
             try
             {
                 Console.WriteLine("Server başlatılıyor..");
-                UdpClient listener = new UdpClient();
+                listener = new UdpClient();
                 IPEndPoint ep = new IPEndPoint(ipAdress, port);
                 listener.Client.Bind(ep);
 
@@ -30,8 +31,6 @@ namespace UDP
                     receivedMessage = listener.Receive(ref ep);
                     Console.WriteLine("Mesaj alındı. Mesaj: " + Encoding.ASCII.GetString(receivedMessage));
                 }
-                Console.WriteLine("Server kapatılıyor..");
-                listener.Close();
             }
             catch (Exception ex)
             {

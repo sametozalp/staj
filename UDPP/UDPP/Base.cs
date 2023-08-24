@@ -8,9 +8,9 @@ namespace UDPP
 {
     public class Base
     {
-        string path = @"C:\Users\Samet\Desktop\UDPP\UDPP\config.txt";
-        string ip = "";
-        string port = "";
+        private string path = @"C:\Users\Samet\Desktop\UDPP\UDPP\config.txt";
+        private string ip = "";
+        private string port = "";
 
         public Base() {
             try
@@ -38,11 +38,11 @@ namespace UDPP
             }
         }
 
-        public IPAddress GetIPAdress()
+        public IPAddress getIPAdress()
         {
             return IPAddress.Parse(ip); ;
         }
-        public int GetPort()
+        public int getPort()
         {
             return Convert.ToInt32(port);
         }

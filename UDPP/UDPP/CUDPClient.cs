@@ -6,13 +6,13 @@ using UDPP;
 
 namespace UDP
 {
-    public class CUDPClient
+    public class CUDPClient : ICS
     {
         public void execute()
         {
             Base @base = new Base();
-            IPAddress ipAdress = @base.GetIPAdress();
-            int port = @base.GetPort();
+            IPAddress ipAdress = @base.getIPAdress();
+            int port = @base.getPort();
             byte[] message = Encoding.ASCII.GetBytes("Hello World");
 
             try
