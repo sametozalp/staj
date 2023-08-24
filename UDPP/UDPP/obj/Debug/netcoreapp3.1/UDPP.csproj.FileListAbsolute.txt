@@ -1,0 +1,13 @@
+C:\Users\Samet\Desktop\UDPP\UDPP\bin\Debug\netcoreapp3.1\UDPP.exe
+C:\Users\Samet\Desktop\UDPP\UDPP\bin\Debug\netcoreapp3.1\UDPP.deps.json
+C:\Users\Samet\Desktop\UDPP\UDPP\bin\Debug\netcoreapp3.1\UDPP.runtimeconfig.json
+C:\Users\Samet\Desktop\UDPP\UDPP\bin\Debug\netcoreapp3.1\UDPP.runtimeconfig.dev.json
+C:\Users\Samet\Desktop\UDPP\UDPP\bin\Debug\netcoreapp3.1\UDPP.dll
+C:\Users\Samet\Desktop\UDPP\UDPP\bin\Debug\netcoreapp3.1\UDPP.pdb
+C:\Users\Samet\Desktop\UDPP\UDPP\obj\Debug\netcoreapp3.1\UDPP.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Samet\Desktop\UDPP\UDPP\obj\Debug\netcoreapp3.1\UDPP.AssemblyInfoInputs.cache
+C:\Users\Samet\Desktop\UDPP\UDPP\obj\Debug\netcoreapp3.1\UDPP.AssemblyInfo.cs
+C:\Users\Samet\Desktop\UDPP\UDPP\obj\Debug\netcoreapp3.1\UDPP.csproj.CoreCompileInputs.cache
+C:\Users\Samet\Desktop\UDPP\UDPP\obj\Debug\netcoreapp3.1\UDPP.dll
+C:\Users\Samet\Desktop\UDPP\UDPP\obj\Debug\netcoreapp3.1\UDPP.pdb
+C:\Users\Samet\Desktop\UDPP\UDPP\obj\Debug\netcoreapp3.1\UDPP.genruntimeconfig.cache
