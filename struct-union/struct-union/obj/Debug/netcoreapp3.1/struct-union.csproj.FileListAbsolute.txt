@@ -1,0 +1,13 @@
+C:\Users\Samet\Desktop\struct-union\struct-union\bin\Debug\netcoreapp3.1\struct-union.exe
+C:\Users\Samet\Desktop\struct-union\struct-union\bin\Debug\netcoreapp3.1\struct-union.deps.json
+C:\Users\Samet\Desktop\struct-union\struct-union\bin\Debug\netcoreapp3.1\struct-union.runtimeconfig.json
+C:\Users\Samet\Desktop\struct-union\struct-union\bin\Debug\netcoreapp3.1\struct-union.runtimeconfig.dev.json
+C:\Users\Samet\Desktop\struct-union\struct-union\bin\Debug\netcoreapp3.1\struct-union.dll
+C:\Users\Samet\Desktop\struct-union\struct-union\bin\Debug\netcoreapp3.1\struct-union.pdb
+C:\Users\Samet\Desktop\struct-union\struct-union\obj\Debug\netcoreapp3.1\struct-union.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Samet\Desktop\struct-union\struct-union\obj\Debug\netcoreapp3.1\struct-union.AssemblyInfoInputs.cache
+C:\Users\Samet\Desktop\struct-union\struct-union\obj\Debug\netcoreapp3.1\struct-union.AssemblyInfo.cs
+C:\Users\Samet\Desktop\struct-union\struct-union\obj\Debug\netcoreapp3.1\struct-union.csproj.CoreCompileInputs.cache
+C:\Users\Samet\Desktop\struct-union\struct-union\obj\Debug\netcoreapp3.1\struct-union.dll
+C:\Users\Samet\Desktop\struct-union\struct-union\obj\Debug\netcoreapp3.1\struct-union.pdb
+C:\Users\Samet\Desktop\struct-union\struct-union\obj\Debug\netcoreapp3.1\struct-union.genruntimeconfig.cache
