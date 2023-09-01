@@ -18,16 +18,18 @@ namespace UDPP
             thread1.Start();
             thread2.Start();
             
-            void method1()
-            {
-                new CUDPServer().execute();
-            }
+            
+        }
 
-            void method2()
-            {
-                Thread.Sleep(1000);
-                new CUDPClient().execute();
-            }
+        private static void method1()
+        {
+            new CUDPServer().execute();
+        }
+
+        private static void method2()
+        {
+            Thread.Sleep(1000);
+            new CUDPClient().execute();
         }
     }
 }

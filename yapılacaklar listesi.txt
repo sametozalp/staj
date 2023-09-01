@@ -1,0 +1,2 @@
+Multipleclient ile client farkı nedir ?
+design patterns araştırılacak
