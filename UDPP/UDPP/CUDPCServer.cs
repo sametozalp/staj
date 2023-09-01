@@ -8,13 +8,8 @@ namespace UDP
 {
     public class CUDPServer : ICS
     {          
-
-        public void execute()
+        public void execute(IPAddress ipAdress, int port)
         {
-            Base @base = new Base();
-
-            IPAddress ipAdress = @base.getIPAdress();
-            int port = @base.getPort();
             UdpClient listener;
 
             try
@@ -27,8 +22,7 @@ namespace UDP
                 while (true)
                 {
                     Console.WriteLine("Mesaj bekleniyor..");
-                    byte[] receivedMessage = new byte[4 * 1024];
-                    receivedMessage = listener.Receive(ref ep);
+                    byte[] receivedMessage = listener.Receive(ref ep);
                     Console.WriteLine("Mesaj alındı. Mesaj: " + Encoding.ASCII.GetString(receivedMessage));
                 }
             }

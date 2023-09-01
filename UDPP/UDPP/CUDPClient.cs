@@ -8,12 +8,10 @@ namespace UDP
 {
     public class CUDPClient : ICS
     {
-        public void execute()
+        public void execute(IPAddress ipAdress, int port)
         {
-            Base @base = new Base();
-            IPAddress ipAdress = @base.getIPAdress();
-            int port = @base.getPort();
             byte[] message;
+            String keyboardData;
 
             try
             {
@@ -22,8 +20,8 @@ namespace UDP
                 while (true)
                 {
                     Console.WriteLine("Mesaj giriniz:");
-                    String userData = Console.ReadLine();
-                    message = Encoding.ASCII.GetBytes(userData);
+                    keyboardData = Console.ReadLine();
+                    message = Encoding.ASCII.GetBytes(keyboardData);
                     Console.WriteLine("Mesaj gönderiliyor..");
                     client.Send(message, message.Length, Convert.ToString(ipAdress), port);
                     Console.WriteLine("Mesaj Gönderildi.");
