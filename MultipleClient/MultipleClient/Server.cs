@@ -10,12 +10,11 @@ namespace MultipleClient
     {
         public void execute(IPAddress ipAdress, int port)
         {
-            UdpClient listener;
+            UdpClient listener = new UdpClient(); ;
 
             try
             {
                 Console.WriteLine("Server başlatılıyor..");
-                listener = new UdpClient();
                 IPEndPoint ep = new IPEndPoint(ipAdress, port);
                 listener.Client.Bind(ep);
 
@@ -29,6 +28,11 @@ namespace MultipleClient
             catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                Console.WriteLine("Server kapatılıyor..");
+                listener.Close();
             }
         }
     }

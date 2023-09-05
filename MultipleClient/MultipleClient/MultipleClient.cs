@@ -14,26 +14,27 @@ namespace MultipleClient
         {
             byte[] message;
             String keyboardData;
+            UdpClient client = client = new UdpClient(); ;
 
             try
             {
                 Console.WriteLine("Client başlatılıyor..");
-                UdpClient client = new UdpClient();
                 for (int i = 0; ; i++)
                 {
                     keyboardData = i.ToString();
                     message = Encoding.ASCII.GetBytes(keyboardData);
                     client.Send(message, message.Length, Convert.ToString(ipAdress), port);
                     //yazdir(keyboardData);
-                    Thread.Sleep(1000);
                 }
-                Console.WriteLine("Client kapatılyor..");
-                client.Close();
-
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                Console.WriteLine("Client kapatılıyor..");
+                client.Close();
             }
         }
 

@@ -42,23 +42,19 @@ namespace MultipleClient
             }
             void method3()
             {
-                Thread.Sleep(1000);
-                new MultipleClient().execute(ipAdress, port);
+               method2();
             }
             void method4()
             {
-                Thread.Sleep(1000);
-                new MultipleClient().execute(ipAdress, port);
+                method2();
             }
             void method5()
             {
-                Thread.Sleep(1000);
-                new MultipleClient().execute(ipAdress, port);
+                method2();
             }
             void method6()
             {
-                Thread.Sleep(1000);
-                new MultipleClient().execute(ipAdress, port);
+                method2();
             }
 
         }
