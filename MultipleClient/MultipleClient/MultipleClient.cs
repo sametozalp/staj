@@ -4,6 +4,7 @@ using System.Net.Sockets;
 using System.Net;
 using System.Text;
 using System.Threading;
+using System.IO;
 
 namespace MultipleClient
 {
@@ -22,9 +23,8 @@ namespace MultipleClient
                 {
                     keyboardData = i.ToString();
                     message = Encoding.ASCII.GetBytes(keyboardData);
-                    Console.WriteLine("Mesaj gönderiliyor..");
                     client.Send(message, message.Length, Convert.ToString(ipAdress), port);
-                    Console.WriteLine("Mesaj Gönderildi.");
+                    //yazdir(keyboardData);
                     Thread.Sleep(1000);
                 }
                 Console.WriteLine("Client kapatılyor..");
@@ -34,6 +34,22 @@ namespace MultipleClient
             catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
+            }
+        }
+
+        private void yazdir(String writing)
+        {
+            String writerPath = @"C:\\Users\\Samet\\Desktop\\MultipleClient\\MultipleClient\writing.txt";
+            try
+            {
+                using (StreamWriter writer = new StreamWriter(writerPath, true))
+                {
+                    writer.WriteLine("Mesaj: "+ writing + " Zaman: " + DateTime.Now);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Hata: " + e.Message);
             }
         }
     }

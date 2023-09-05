@@ -1,2 +1,4 @@
-Multipleclient ile client farkı nedir ?
-design patterns araştırılacak
+Design patterns
+SOLID principles
+UART
+UDP/TCP ve kodlar
