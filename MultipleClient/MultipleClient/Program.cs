@@ -10,7 +10,6 @@ namespace MultipleClient
     {
         static void Main(string[] args)
         {
-
             Base @base = new Base();
             IPAddress ipAdress = @base.getIPAdress();
             int port = @base.getPort();
@@ -35,26 +34,30 @@ namespace MultipleClient
                 new Server().execute(ipAdress, port);
             }
 
-            void method2()
+            void methodClient(String clientNo)
             {
                 Thread.Sleep(1000);
-                new MultipleClient().execute(ipAdress, port);
+                new MultipleClient().execute(ipAdress, port, clientNo);
+            }
+            void method2()
+            {
+                methodClient("1");
             }
             void method3()
             {
-               method2();
+               methodClient("2");
             }
             void method4()
             {
-                method2();
+                methodClient("3");
             }
             void method5()
             {
-                method2();
+                methodClient("4");
             }
             void method6()
             {
-                method2();
+                methodClient("5");
             }
 
         }

@@ -10,7 +10,7 @@ namespace MultipleClient
     {
         public void execute(IPAddress ipAdress, int port)
         {
-            UdpClient listener = new UdpClient(); ;
+            UdpClient listener = new UdpClient();
 
             try
             {
@@ -34,6 +34,7 @@ namespace MultipleClient
                 Console.WriteLine("Server kapatılıyor..");
                 listener.Close();
             }
+            
         }
     }
 }

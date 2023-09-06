@@ -10,21 +10,22 @@ namespace MultipleClient
 {
     internal class MultipleClient
     {
-        public void execute(IPAddress ipAdress, int port)
+        public void execute(IPAddress ipAdress, int port, String clientNo)
         {
             byte[] message;
             String keyboardData;
             UdpClient client = client = new UdpClient(); ;
-
+            
             try
             {
                 Console.WriteLine("Client başlatılıyor..");
                 for (int i = 0; ; i++)
                 {
                     keyboardData = i.ToString();
-                    message = Encoding.ASCII.GetBytes(keyboardData);
+                    message = Encoding.ASCII.GetBytes(keyboardData + " (Client" + clientNo + ")");
                     client.Send(message, message.Length, Convert.ToString(ipAdress), port);
                     //yazdir(keyboardData);
+                    Thread.Sleep(1);
                 }
             }
             catch (Exception ex)
@@ -37,6 +38,7 @@ namespace MultipleClient
                 client.Close();
             }
         }
+        
 
         private void yazdir(String writing)
         {
