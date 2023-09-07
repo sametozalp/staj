@@ -1,0 +1,13 @@
+C:\Users\Samet\Desktop\MultipleClientExample\MultipleClientExample\bin\Debug\netcoreapp3.1\MultipleClientExample.exe
+C:\Users\Samet\Desktop\MultipleClientExample\MultipleClientExample\bin\Debug\netcoreapp3.1\MultipleClientExample.deps.json
+C:\Users\Samet\Desktop\MultipleClientExample\MultipleClientExample\bin\Debug\netcoreapp3.1\MultipleClientExample.runtimeconfig.json
+C:\Users\Samet\Desktop\MultipleClientExample\MultipleClientExample\bin\Debug\netcoreapp3.1\MultipleClientExample.runtimeconfig.dev.json
+C:\Users\Samet\Desktop\MultipleClientExample\MultipleClientExample\bin\Debug\netcoreapp3.1\MultipleClientExample.dll
+C:\Users\Samet\Desktop\MultipleClientExample\MultipleClientExample\bin\Debug\netcoreapp3.1\MultipleClientExample.pdb
+C:\Users\Samet\Desktop\MultipleClientExample\MultipleClientExample\obj\Debug\netcoreapp3.1\MultipleClientExample.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Samet\Desktop\MultipleClientExample\MultipleClientExample\obj\Debug\netcoreapp3.1\MultipleClientExample.AssemblyInfoInputs.cache
+C:\Users\Samet\Desktop\MultipleClientExample\MultipleClientExample\obj\Debug\netcoreapp3.1\MultipleClientExample.AssemblyInfo.cs
+C:\Users\Samet\Desktop\MultipleClientExample\MultipleClientExample\obj\Debug\netcoreapp3.1\MultipleClientExample.csproj.CoreCompileInputs.cache
+C:\Users\Samet\Desktop\MultipleClientExample\MultipleClientExample\obj\Debug\netcoreapp3.1\MultipleClientExample.dll
+C:\Users\Samet\Desktop\MultipleClientExample\MultipleClientExample\obj\Debug\netcoreapp3.1\MultipleClientExample.pdb
+C:\Users\Samet\Desktop\MultipleClientExample\MultipleClientExample\obj\Debug\netcoreapp3.1\MultipleClientExample.genruntimeconfig.cache
