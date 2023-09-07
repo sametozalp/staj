@@ -20,9 +20,11 @@ namespace MultipleClient
             
             Thread thread1 = new Thread(method1);
             Thread thread2 = new Thread(method2);
+            Thread thread3 = new Thread(method2);
 
             thread1.Start();
             thread2.Start();
+            thread3.Start();
 
             void method1()
             {

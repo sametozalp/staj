@@ -4,6 +4,7 @@ using System.Net;
 using System.IO;
 using System.Runtime.InteropServices;
 using UDPP;
+using System.Threading;
 
 namespace MultipleClient
 {
@@ -20,8 +21,12 @@ namespace MultipleClient
             try
             {
                 Console.WriteLine("Client başlatılıyor..");
-                byte[] byteArray = ConvertToByteArray(insan);
-                client.Send(byteArray, byteArray.Length, Convert.ToString(ipAdress), port);
+                while(true)
+                {
+                    byte[] byteArray = ConvertToByteArray(insan);
+                    client.Send(byteArray, byteArray.Length, Convert.ToString(ipAdress), port);
+                    Thread.Sleep(1);
+                }
             }
             catch (Exception ex)
             {
