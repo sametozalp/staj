@@ -1,8 +1,4 @@
-﻿using System;
-using System.Net;
-using System.Net.Sockets;
-using System.Runtime.InteropServices;
-using System.Text;
+﻿using System.Net;
 using System.Threading;
 using UDPP;
 
@@ -37,8 +33,7 @@ namespace MultipleClient
             {
                 Thread.Sleep(1000);
                 new MultipleClient().execute(ipAdress, port);
-            }
-            
+            }            
         }
     }
 }

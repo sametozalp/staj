@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Net;
-using System.Text;
 
 namespace UDPP
 {
@@ -45,6 +44,26 @@ namespace UDPP
         public int getPort()
         {
             return Convert.ToInt32(port);
+        }
+
+        public struct Erkek
+        {
+            public string isim;
+            public int sac;
+            public long makyaj;
+            public sbyte sesFrekans;
+        }
+        public struct Kadin
+        {
+            public string isim;
+            public int sac;
+            public long makyaj;
+            public sbyte sesFrekans;
+        }
+        public struct Insan
+        {
+            public Erkek mehmet;
+            public Kadin ayse;
         }
     }            
 }

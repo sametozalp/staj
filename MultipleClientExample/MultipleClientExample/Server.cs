@@ -1,34 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Net.Sockets;
 using System.Net;
 using System.Text;
 using System.Runtime.InteropServices;
+using UDPP;
 
 namespace MultipleClient
 {
     internal class Server
     {
-        public struct Erkek
-        {
-            public string isim;
-            public int sac;
-            public long makyaj;
-            public sbyte sesFrekans;
-        }
-        public struct Kadin
-        {
-            public string isim;
-            public int sac;
-            public long makyaj;
-            public sbyte sesFrekans;
-        }
-        public struct Insan
-        {
-            public Erkek mehmet;
-            public Kadin ayse;
-        }
-
         public void execute(IPAddress ipAdress, int port)
         {
             UdpClient listener = new UdpClient();
@@ -43,7 +23,7 @@ namespace MultipleClient
                 {
                     Console.WriteLine("Mesaj bekleniyor..");
                     byte[] receivedMessage = listener.Receive(ref ep);
-                    Insan insan = ConvertByteArrayToStruct(receivedMessage);
+                    Base.Insan insan = ConvertByteArrayToStruct(receivedMessage);
                     Console.WriteLine("Mesaj alındı. Mesaj: \n" 
                         + "Erkek isim: " + insan.mehmet.isim
                        + "\nSac: " + (insan.mehmet.sac == 1 ? "Uzun sac" : "Kısa sac")
@@ -67,18 +47,20 @@ namespace MultipleClient
             }
         }
 
-        public Insan ConvertByteArrayToStruct(byte[] byteArray)
+        public Base.Insan ConvertByteArrayToStruct(byte[] byteArray)
         {
-            Insan insan = new Insan();
-
-            GCHandle handle = GCHandle.Alloc(byteArray, GCHandleType.Pinned);
+            Base.Insan insan = new Base.Insan();
+            //byte arrayi sabitlenmiş bir işaretçiye dönüştürüyoruz. (GCHandleType.Pinned)
+            GCHandle handle = GCHandle.Alloc(byteArray, GCHandleType.Pinned); // pointer
             try
             {
-                insan = (Insan)Marshal.PtrToStructure(handle.AddrOfPinnedObject(), typeof(Insan));
+                //burda da byte dizisini tekrar struct yapısına çeviriyoruz.
+                //handle.AddrOfPinnedObject() pointerın adresini alır.
+                insan = (Base.Insan)Marshal.PtrToStructure(handle.AddrOfPinnedObject(), typeof(Base.Insan));
             }
             finally
             {
-                handle.Free();
+                handle.Free(); // pointerı serbest bırakıyoruz.
             }
 
             return insan;
