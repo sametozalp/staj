@@ -1,0 +1,13 @@
+C:\Users\Samet\Desktop\Debug\Debug\bin\Release\netcoreapp3.1\Debug.exe
+C:\Users\Samet\Desktop\Debug\Debug\bin\Release\netcoreapp3.1\Debug.deps.json
+C:\Users\Samet\Desktop\Debug\Debug\bin\Release\netcoreapp3.1\Debug.runtimeconfig.json
+C:\Users\Samet\Desktop\Debug\Debug\bin\Release\netcoreapp3.1\Debug.runtimeconfig.dev.json
+C:\Users\Samet\Desktop\Debug\Debug\bin\Release\netcoreapp3.1\Debug.dll
+C:\Users\Samet\Desktop\Debug\Debug\bin\Release\netcoreapp3.1\Debug.pdb
+C:\Users\Samet\Desktop\Debug\Debug\obj\Release\netcoreapp3.1\Debug.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Samet\Desktop\Debug\Debug\obj\Release\netcoreapp3.1\Debug.AssemblyInfoInputs.cache
+C:\Users\Samet\Desktop\Debug\Debug\obj\Release\netcoreapp3.1\Debug.AssemblyInfo.cs
+C:\Users\Samet\Desktop\Debug\Debug\obj\Release\netcoreapp3.1\Debug.csproj.CoreCompileInputs.cache
+C:\Users\Samet\Desktop\Debug\Debug\obj\Release\netcoreapp3.1\Debug.dll
+C:\Users\Samet\Desktop\Debug\Debug\obj\Release\netcoreapp3.1\Debug.pdb
+C:\Users\Samet\Desktop\Debug\Debug\obj\Release\netcoreapp3.1\Debug.genruntimeconfig.cache
