@@ -1,6 +1,4 @@
-﻿using System.IO.Ports;
-
-namespace UART1
+﻿namespace UART1
 {
     internal class Program
     {
