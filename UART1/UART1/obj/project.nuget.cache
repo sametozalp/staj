@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "mYsVRLlJ60CZ2HnSe6v3zNv0WGB8GNANR/IsN6Rmubo2lCCguthvfNfanyArNEqZyyJClS8DIpl5qfIn2bKPLg==",
+  "dgSpecHash": "HzFDxITh5NIN4XZIDd7nFBJDoOM+/Kvu9zuvNgdMQ2r9DTsyy8gPS1Xn3/5c6hKjnGj/LARm6qco9xxdjnZXWg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Samet\\Desktop\\UART1\\UART1\\UART1.csproj",
   "expectedPackageFiles": [
@@ -10,11 +10,7 @@
     "C:\\Users\\Samet\\.nuget\\packages\\runtime.native.system.io.ports\\7.0.0\\runtime.native.system.io.ports.7.0.0.nupkg.sha512",
     "C:\\Users\\Samet\\.nuget\\packages\\runtime.osx-arm64.runtime.native.system.io.ports\\7.0.0\\runtime.osx-arm64.runtime.native.system.io.ports.7.0.0.nupkg.sha512",
     "C:\\Users\\Samet\\.nuget\\packages\\runtime.osx-x64.runtime.native.system.io.ports\\7.0.0\\runtime.osx-x64.runtime.native.system.io.ports.7.0.0.nupkg.sha512",
-    "C:\\Users\\Samet\\.nuget\\packages\\system.io.ports\\7.0.0\\system.io.ports.7.0.0.nupkg.sha512",
-    "C:\\Users\\Samet\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.0.0\\microsoft.windowsdesktop.app.ref.3.0.0.nupkg.sha512",
-    "C:\\Users\\Samet\\.nuget\\packages\\microsoft.netcore.app.ref\\3.0.0\\microsoft.netcore.app.ref.3.0.0.nupkg.sha512",
-    "C:\\Users\\Samet\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.0.1\\microsoft.aspnetcore.app.ref.3.0.1.nupkg.sha512",
-    "C:\\Users\\Samet\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.0.3\\microsoft.netcore.app.host.win-x64.3.0.3.nupkg.sha512"
+    "C:\\Users\\Samet\\.nuget\\packages\\system.io.ports\\7.0.0\\system.io.ports.7.0.0.nupkg.sha512"
   ],
   "logs": []
 }

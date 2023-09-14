@@ -7,8 +7,7 @@ namespace UART1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(SerialPort.GetPortNames());
-            SerialPort serialPort = new SerialPort("COM5",9600);
+            SerialPort serialPort = new SerialPort("COM3",9600);
 
             try
             {
