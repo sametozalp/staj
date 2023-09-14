@@ -1,6 +1,4 @@
-﻿using System;
-using System.IO.Ports;
-using System.Threading;
+﻿using System.Threading;
 
 namespace UART2
 {
@@ -8,27 +6,16 @@ namespace UART2
     {
         static void Main(string[] args)
         {
-            SerialPort serialPort = new SerialPort("COM3",9600);
 
-            try
+            UartClient client = new UartClient("COM3", 9600);
+            client.open();
+            for (int i = 0; i<100; i++)
             {
-                serialPort.Open();
-
-                while (true)
-                {
-                    string data = "Hello world!!";
-                    serialPort.Write(data);
-                    Thread.Sleep(1000);
-                }
+                client.sendData("Hello World!!");
+                Thread.Sleep(1000);
             }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Hata: " + ex.Message);
-            }
-            finally
-            {
-                serialPort.Close();
-            }
+            client.close();
+            
         }
     }
 }
