@@ -6,7 +6,6 @@ namespace UART2
     {
         static void Main(string[] args)
         {
-
             UartClient client = new UartClient("COM3", 9600);
             client.open();
             for (int i = 0; i<100; i++)
@@ -15,7 +14,6 @@ namespace UART2
                 Thread.Sleep(1000);
             }
             client.close();
-            
         }
     }
 }
