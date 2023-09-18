@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections;
+using System.IO;
 using System.IO.Ports;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -41,40 +41,49 @@ namespace trendyol2
 
         public void getByte()
         {
+            byte[] receivedData = new byte[24];
+
             while (true)
             {
-                byte[] receivedData = new byte[30]; // Alınacak veri için bir byte dizisi tanımlayın
                 serialPort.Read(receivedData, 0, receivedData.Length);
 
-                //Console.WriteLine(BitConverter.ToString(receivedData));
+                Console.WriteLine(BitConverter.ToString(receivedData));
 
-                byteArrayToStruct(receivedData);
+                Product product = byteArrayToStruct(receivedData);
+                Console.WriteLine(product.name);
 
                 Thread.Sleep(1000);
             }
         }
 
-        public void byteArrayToStruct(byte[] byteArray)
+        private Product byteArrayToStruct(byte[] receivedData)
         {
             Product product = new Product();
 
             //byte arrayi sabitlenmiş bir işaretçiye dönüştürüyoruz. (GCHandleType.Pinned)
-            GCHandle handle = GCHandle.Alloc(byteArray, GCHandleType.Pinned); // pointer
-            //burda da byte dizisini tekrar struct yapısına çeviriyoruz.
-            //handle.AddrOfPinnedObject() pointerın adresini alır.
-            product = (Product)Marshal.PtrToStructure(handle.AddrOfPinnedObject(), typeof(Product));
+            GCHandle handle = GCHandle.Alloc(receivedData, GCHandleType.Pinned); // pointer
+            try
+            {
+                //burda da byte dizisini tekrar struct yapısına çeviriyoruz.
+                //handle.AddrOfPinnedObject() pointerın adresini alır.
+                product = (Product)Marshal.PtrToStructure(handle.AddrOfPinnedObject(), typeof(Product));
 
-            handle.Free(); // pointerı serbest bırakıyoruz.
+                Console.WriteLine(product.name);
 
-            Console.WriteLine(product.name);
+            }catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }finally {
+                handle.Free(); // pointerı serbest bırakıyoruz.
+            }
+            return product;
         }
-
+        
         struct Product
         {
             public string name;
             public int price;
             public DateTime dateTime;
         }
-
     }
 }

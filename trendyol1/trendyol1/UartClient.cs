@@ -34,7 +34,7 @@ namespace trendyol1
                 Console.WriteLine(ex.ToString());
             }
         }
-
+        
         public void sendString(String data)
         {
             try
@@ -57,5 +57,6 @@ namespace trendyol1
                 Console.WriteLine(ex.ToString());
             }
         }
+        
     }
 }

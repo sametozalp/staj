@@ -33,7 +33,7 @@ namespace trendyol1
                                                                // false, yönlendirme işlemidir.
             Marshal.Copy(structPtr, byteArray, 0, productStructSize); // yapıyı byteArray'in içerisine atar.
             Marshal.FreeHGlobal(structPtr);
-
+            
             return byteArray;
         }
 
