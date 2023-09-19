@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.IO.Ports;
+using System.Runtime.ExceptionServices;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
@@ -14,7 +15,7 @@ namespace trendyol2
         {
             serialPort = new SerialPort(portName, baudRate, Parity.Odd, 8, StopBits.Two);
         }
-
+        //******************************************
         public void open()
         {
             try
@@ -26,7 +27,7 @@ namespace trendyol2
                 Console.WriteLine(ex.ToString());
             }
         }
-
+        //******************************************
         public void close()
         {
             try
@@ -38,7 +39,7 @@ namespace trendyol2
                 Console.WriteLine(ex.ToString());
             }
         }
-
+        //******************************************
         public void getByte()
         {
             byte[] receivedData = new byte[24];
@@ -55,7 +56,7 @@ namespace trendyol2
                 Thread.Sleep(1000);
             }
         }
-
+        //******************************************
         private Product byteArrayToStruct(byte[] receivedData)
         {
             Product product = new Product();
@@ -70,20 +71,19 @@ namespace trendyol2
 
                 Console.WriteLine(product.name);
 
-            }catch(Exception ex)
+            } catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
-            }finally {
+            } finally {
                 handle.Free(); // pointerı serbest bırakıyoruz.
             }
             return product;
         }
-        
+        //******************************************
         struct Product
         {
             public string name;
             public int price;
-            public DateTime dateTime;
         }
     }
 }

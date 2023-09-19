@@ -1,5 +1,8 @@
 ﻿using System;
+using System.IO;
 using System.Runtime.InteropServices;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.Runtime.Serialization;
 
 namespace trendyol1
 {
@@ -13,14 +16,12 @@ namespace trendyol1
             Product product = new Product();
             product.name = "Watch";
             product.price = changePrice();
-            product.dateTime = DateTime.Now;
 
             byte[] byteArray = structToByteArray(product);
-
             client.sendByteArray(byteArray);
 
             client.close();
-
+            
         }
 
         private static byte[] structToByteArray(Product product)
@@ -46,7 +47,6 @@ namespace trendyol1
         {
             public string name;
             public int price;
-            public DateTime dateTime;
         }
     }
 }

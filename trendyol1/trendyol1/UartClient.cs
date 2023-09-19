@@ -10,7 +10,7 @@ namespace trendyol1
         {
             serialPort = new SerialPort(portName, baudRate, Parity.Mark, 8, StopBits.One);
         }
-
+        //******************************************
         public void open()
         {
             try
@@ -22,7 +22,7 @@ namespace trendyol1
                 Console.WriteLine(ex.ToString());
             }
         }
-
+        //******************************************
         public void close()
         {
             try
@@ -34,7 +34,7 @@ namespace trendyol1
                 Console.WriteLine(ex.ToString());
             }
         }
-        
+        //******************************************
         public void sendString(String data)
         {
             try
@@ -46,7 +46,7 @@ namespace trendyol1
                 Console.WriteLine(ex.Message);
             }
         }
-
+        //******************************************
         public void sendByteArray(byte[] byteArray)
         {
             try
