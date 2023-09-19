@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Runtime.InteropServices;
-
-namespace trendyol2
+﻿namespace trendyol2
 {
     internal class Program
     {
@@ -16,6 +12,6 @@ namespace trendyol2
             server.close();
         }
 
-        
+
     }
 }

@@ -8,7 +8,7 @@ namespace trendyol1
         SerialPort serialPort;
         public UartClient(string portName, int baudRate)
         {
-            serialPort = new SerialPort(portName, baudRate, Parity.Mark, 8, StopBits.One);
+            serialPort = new SerialPort(portName, baudRate);
         }
         //******************************************
         public void open()
