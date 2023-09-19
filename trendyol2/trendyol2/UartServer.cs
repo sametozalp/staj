@@ -40,40 +40,39 @@ namespace trendyol2
         //******************************************
         public void getByte()
         {
-            byte[] receivedData = new byte[Marshal.SizeOf(typeof(Product))];
-
+            byte[] receivedData = new byte[Marshal.SizeOf<Product>()];
             while (true)
             {
                 serialPort.Read(receivedData, 0, receivedData.Length);
 
-                //Console.WriteLine(BitConverter.ToString(receivedData));
+                Product receivedPacket = byteArrayToStructure(receivedData);
 
-                Product product = byteArrayToStruct(receivedData);
-
-                Console.WriteLine(product.name);
-
+                Console.WriteLine($"Received Data - Timestamp: {receivedPacket.Timestamp}, Data1: {receivedPacket.name}, Data2: {receivedPacket.price}");
                 Thread.Sleep(1000);
             }
         }
         //******************************************
-        private Product byteArrayToStruct(byte[] receivedData)
+        public static Product byteArrayToStructure(byte[] receivedData)
         {
-            Product product = new Product();
+            Product uartData = new Product();
 
-            GCHandle handle = GCHandle.Alloc(receivedData, GCHandleType.Pinned); // pointer
-
-            product = (Product)Marshal.PtrToStructure(handle.AddrOfPinnedObject(), typeof(Product));
-
-            handle.Free();
-
-            return product;
+            GCHandle handle = GCHandle.Alloc(receivedData, GCHandleType.Pinned);
+            try
+            {
+                uartData = (Product)Marshal.PtrToStructure(handle.AddrOfPinnedObject(), typeof(Product));
+                return uartData;
+            }
+            finally
+            {
+                handle.Free();
+            }
         }
         //******************************************
-        [StructLayout(LayoutKind.Sequential, Pack = 1)]
         public struct Product
         {
-            public string name;
+            public int name;
             public int price;
+            public long Timestamp;
         }
     }
 }
