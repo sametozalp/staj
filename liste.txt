@@ -1,7 +1,0 @@
-Design patterns
-SOLID principles
-UART
-UDP/TCP ve kodlar
-UDP kod 1
-UDP kod 2
-UDP kod 3

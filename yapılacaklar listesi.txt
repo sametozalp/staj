@@ -1,4 +1,0 @@
-Design patterns
-SOLID principles
-UART
-UDP/TCP ve kodlar
