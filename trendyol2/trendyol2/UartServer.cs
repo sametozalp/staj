@@ -1,5 +1,4 @@
 ﻿using System;
-using System.IO;
 using System.IO.Ports;
 using System.Runtime.InteropServices;
 using System.Threading;
@@ -45,22 +44,22 @@ namespace trendyol2
             {
                 serialPort.Read(receivedData, 0, receivedData.Length);
 
-                Product receivedPacket = byteArrayToStructure(receivedData);
+                Product product = byteArrayToStructure(receivedData);
+                Console.WriteLine($"Name: {product.name}, Price: {Convert.ToString(product.price)}");
 
-                Console.WriteLine($"Received Data - Timestamp: {receivedPacket.Timestamp}, Data1: {receivedPacket.name}, Data2: {receivedPacket.price}");
                 Thread.Sleep(1000);
             }
         }
         //******************************************
         public static Product byteArrayToStructure(byte[] receivedData)
         {
-            Product uartData = new Product();
-
+            Product product = new Product();
+ 
             GCHandle handle = GCHandle.Alloc(receivedData, GCHandleType.Pinned);
             try
             {
-                uartData = (Product)Marshal.PtrToStructure(handle.AddrOfPinnedObject(), typeof(Product));
-                return uartData;
+                product = (Product)Marshal.PtrToStructure(handle.AddrOfPinnedObject(), typeof(Product));
+                return product;
             }
             finally
             {
@@ -70,7 +69,7 @@ namespace trendyol2
         //******************************************
         public struct Product
         {
-            public int name;
+            public int productNo;
             public int price;
             public long Timestamp;
         }

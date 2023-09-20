@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Runtime.InteropServices;
+using System.Threading;
 
 namespace trendyol1
 {
@@ -11,12 +12,16 @@ namespace trendyol1
             client.open();
 
             Product product = new Product();
-            product.name = "Watch";
-            product.price = 10;
+            product.productNo = 10;
+            
+            while (true)
+            {
+                product.price = changePrice();
+                byte[] byteArray = structToByteArray(product);
 
-            byte[] byteArray = structToByteArray(product);
-
-            client.sendByteArray(byteArray);
+                client.sendByteArray(byteArray);
+                Thread.Sleep(1000);
+            }
 
             client.close();
         }
@@ -37,91 +42,18 @@ namespace trendyol1
         //******************************************
         struct Product
         {
-            public string name;
+            public int productNo;
             public int price;
+            public long Timestamp;
+        }
+        //******************************************
+        private static int changePrice()
+        {
+            Random random = new Random();
+            int price = random.Next(100) + 10;
+            Thread.Sleep(1000);
+
+            return price;
         }
     }
 }
-/*
-using System.IO.Ports;
-using System.Runtime.InteropServices;
-using System;
-
-[StructLayout(LayoutKind.Sequential, Pack = 1)]
-struct UartData
-{
-    public long Timestamp;  // Timestamp in ticks (64-bit)
-    public int Data1;
-    public int Data2;
-}
-class UartClient
-{
-    static void Main(string[] args)
-    {
-        SerialPort serialPort = new SerialPort("COM4", 9600); // Replace "COM2" with your actual port name
-        serialPort.Open();
-
-        while (true)
-        {
-            // Prepare data to send (e.g., two integers and a timestamp)
-            UartData sendData = new UartData
-            {
-                Timestamp = DateTime.UtcNow.Ticks, // Current timestamp in ticks
-                Data1 = 42,
-                Data2 = 84
-            };
-
-            // Convert data to byte array and send to the server
-            byte[] sendDataBytes = StructureToByteArray(sendData);
-            serialPort.Write(sendDataBytes, 0, sendDataBytes.Length);
-
-            // Receive and process the response
-            byte[] responseData = new byte[Marshal.SizeOf<UartData>()];
-            serialPort.Read(responseData, 0, responseData.Length);
-
-            // Deserialize the response data into the UartData struct
-            UartData responsePacket = ByteArrayToStructure<UartData>(responseData);
-
-            // Process the response data (e.g., print it)
-            Console.WriteLine($"Received response: Timestamp={responsePacket.Timestamp}, Data1={responsePacket.Data1}, Data2={responsePacket.Data2}");
-        }
-    }
-
-    // Helper method to convert byte array to structure
-    static T ByteArrayToStructure<T>(byte[] bytes) where T : struct
-    {
-        GCHandle handle = GCHandle.Alloc(bytes, GCHandleType.Pinned);
-        try
-        {
-            return (T)Marshal.PtrToStructure(handle.AddrOfPinnedObject(), typeof(T));
-        }
-        finally
-        {
-            handle.Free();
-        }
-    }
-
-    // Helper method to convert structure to byte array
-    static byte[] StructureToByteArray<T>(T structure) where T : struct
-    {
-        int size = Marshal.SizeOf(structure);
-        byte[] bytes = new byte[size];
-        IntPtr ptr = Marshal.AllocHGlobal(size);
-
-        try
-        {
-            Marshal.StructureToPtr(structure, ptr, false);
-            Marshal.Copy(ptr, bytes, 0, size);
-        }
-        finally
-        {
-            Marshal.FreeHGlobal(ptr);
-        }
-
-        return bytes;
-    }
-
-    // Helper methods (same as in UartServer)
-    // ...
-}
-*/
