@@ -2,6 +2,8 @@
 using System.IO.Ports;
 using System.Runtime.InteropServices;
 using System.Threading;
+using System.Xml.Linq;
+using static trendyol2.UartServer;
 
 namespace trendyol2
 {
@@ -40,15 +42,27 @@ namespace trendyol2
         public void getByte()
         {
             byte[] receivedData = new byte[Marshal.SizeOf<Product>()];
+            ProductSubject subject = subject = new ProductSubject();
+            ProductObserver observer = new ProductObserver();
+
             while (true)
             {
                 serialPort.Read(receivedData, 0, receivedData.Length);
 
                 Product product = byteArrayToStructure(receivedData);
-                Console.WriteLine($"Name: {product.name}, Price: {Convert.ToString(product.price)}");
+                //Console.WriteLine($"Product No: {product.productNo}, Price: {product.price}, Timestamp: {product.Timestamp}");
 
-                Thread.Sleep(1000);
+                initializeSubjectAndObserver(subject, observer, product);
+
+                Thread.Sleep(1);
             }
+        }
+        //******************************************
+        private void initializeSubjectAndObserver(ProductSubject subject, ProductObserver observer, Product product)
+        {
+            subject.register(product);
+            subject.notify(product);
+            observer.update();
         }
         //******************************************
         public static Product byteArrayToStructure(byte[] receivedData)

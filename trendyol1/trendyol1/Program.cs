@@ -16,11 +16,12 @@ namespace trendyol1
             
             while (true)
             {
+                product.Timestamp = DateTime.UtcNow.Ticks;
                 product.price = changePrice();
                 byte[] byteArray = structToByteArray(product);
 
                 client.sendByteArray(byteArray);
-                Thread.Sleep(1000);
+                Thread.Sleep(1);
             }
 
             client.close();
@@ -47,10 +48,13 @@ namespace trendyol1
             public long Timestamp;
         }
         //******************************************
+        static Random random;
+        static int price;
         private static int changePrice()
         {
-            Random random = new Random();
-            int price = random.Next(100) + 10;
+            random = new Random();
+            price = random.Next(100) + 10;
+            Console.WriteLine(price);
             Thread.Sleep(1000);
 
             return price;
