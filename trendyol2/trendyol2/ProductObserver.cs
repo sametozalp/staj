@@ -11,7 +11,7 @@ namespace trendyol2
         {
             foreach(Product product in products)
             {
-                Console.WriteLine(product.productNo + " nolu ürünün yeni fiyatı: " + product.price);
+                Console.WriteLine(product.productNo + " nolu ürünün yeni fiyatı: " + product.price + " Timestamp: " + product.Timestamp);
             }
         }
     }

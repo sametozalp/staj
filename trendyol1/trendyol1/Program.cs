@@ -21,7 +21,7 @@ namespace trendyol1
                 byte[] byteArray = structToByteArray(product);
 
                 client.sendByteArray(byteArray);
-                Thread.Sleep(1);
+                Thread.Sleep(1000);
             }
 
             client.close();

@@ -44,17 +44,17 @@ namespace trendyol2
             byte[] receivedData = new byte[Marshal.SizeOf<Product>()];
             ProductSubject subject = subject = new ProductSubject();
             ProductObserver observer = new ProductObserver();
-
+            Product product;
             while (true)
             {
                 serialPort.Read(receivedData, 0, receivedData.Length);
 
-                Product product = byteArrayToStructure(receivedData);
+                product = byteArrayToStructure(receivedData);
                 //Console.WriteLine($"Product No: {product.productNo}, Price: {product.price}, Timestamp: {product.Timestamp}");
 
                 initializeSubjectAndObserver(subject, observer, product);
 
-                Thread.Sleep(1);
+                Thread.Sleep(1000);
             }
         }
         //******************************************

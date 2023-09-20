@@ -33,11 +33,12 @@ namespace trendyol2
 
         public void notify(Product product)
         {
-            foreach (Product item in products)
+            for (int i = 0; i < products.Count; i++)
             {
-                if ((item.productNo == product.productNo) && (item.price != product.price))
+                if (products[i].productNo == product.productNo && products[i].price != product.price)
                 {
-                    products.Add(item);
+                    products[i] = product;
+                    break;
                 }
             }
         }
