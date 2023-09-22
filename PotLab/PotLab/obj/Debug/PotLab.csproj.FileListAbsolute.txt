@@ -1,0 +1,12 @@
+C:\Users\Samet\Desktop\PotLab\PotLab\bin\Debug\PotLab.exe.config
+C:\Users\Samet\Desktop\PotLab\PotLab\bin\Debug\PotLab.exe
+C:\Users\Samet\Desktop\PotLab\PotLab\bin\Debug\PotLab.pdb
+C:\Users\Samet\Desktop\PotLab\PotLab\obj\Debug\PotLab.csproj.AssemblyReference.cache
+C:\Users\Samet\Desktop\PotLab\PotLab\obj\Debug\PotLab.csproj.CoreCompileInputs.cache
+C:\Users\Samet\Desktop\PotLab\PotLab\obj\Debug\PotLab.exe
+C:\Users\Samet\Desktop\PotLab\PotLab\obj\Debug\PotLab.pdb
+C:\Users\Samet\Desktop\PotLab\PotLab\bin\Debug\Mitov.BasicLab.dll
+C:\Users\Samet\Desktop\PotLab\PotLab\bin\Debug\Mitov.PlotLabBasic.dll
+C:\Users\Samet\Desktop\PotLab\PotLab\obj\Debug\PotLab.Form1.resources
+C:\Users\Samet\Desktop\PotLab\PotLab\obj\Debug\PotLab.csproj.GenerateResource.cache
+C:\Users\Samet\Desktop\PotLab\PotLab\obj\Debug\PotLab.csproj.CopyComplete

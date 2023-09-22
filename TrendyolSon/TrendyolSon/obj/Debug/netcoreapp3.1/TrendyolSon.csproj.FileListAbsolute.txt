@@ -1,0 +1,13 @@
+C:\Users\Samet\Desktop\TrendyolSon\TrendyolSon\bin\Debug\netcoreapp3.1\TrendyolSon.exe
+C:\Users\Samet\Desktop\TrendyolSon\TrendyolSon\bin\Debug\netcoreapp3.1\TrendyolSon.deps.json
+C:\Users\Samet\Desktop\TrendyolSon\TrendyolSon\bin\Debug\netcoreapp3.1\TrendyolSon.runtimeconfig.json
+C:\Users\Samet\Desktop\TrendyolSon\TrendyolSon\bin\Debug\netcoreapp3.1\TrendyolSon.runtimeconfig.dev.json
+C:\Users\Samet\Desktop\TrendyolSon\TrendyolSon\bin\Debug\netcoreapp3.1\TrendyolSon.dll
+C:\Users\Samet\Desktop\TrendyolSon\TrendyolSon\bin\Debug\netcoreapp3.1\TrendyolSon.pdb
+C:\Users\Samet\Desktop\TrendyolSon\TrendyolSon\obj\Debug\netcoreapp3.1\TrendyolSon.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Samet\Desktop\TrendyolSon\TrendyolSon\obj\Debug\netcoreapp3.1\TrendyolSon.AssemblyInfoInputs.cache
+C:\Users\Samet\Desktop\TrendyolSon\TrendyolSon\obj\Debug\netcoreapp3.1\TrendyolSon.AssemblyInfo.cs
+C:\Users\Samet\Desktop\TrendyolSon\TrendyolSon\obj\Debug\netcoreapp3.1\TrendyolSon.csproj.CoreCompileInputs.cache
+C:\Users\Samet\Desktop\TrendyolSon\TrendyolSon\obj\Debug\netcoreapp3.1\TrendyolSon.dll
+C:\Users\Samet\Desktop\TrendyolSon\TrendyolSon\obj\Debug\netcoreapp3.1\TrendyolSon.pdb
+C:\Users\Samet\Desktop\TrendyolSon\TrendyolSon\obj\Debug\netcoreapp3.1\TrendyolSon.genruntimeconfig.cache

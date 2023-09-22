@@ -33,6 +33,8 @@ namespace trendyol2
 
         public void notify(Product product)
         {
+            // for each observer in observers
+                // observer.Update(Product product)
             for (int i = 0; i < products.Count; i++)
             {
                 if (products[i].productNo == product.productNo && products[i].price != product.price)
