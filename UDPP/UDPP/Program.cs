@@ -34,7 +34,5 @@ namespace UDPP
                 new CUDPClient().execute(ipAdress, port);
             }
         }
-
-        
     }
 }

@@ -6,7 +6,6 @@ namespace MultipleClient
 {
     internal class Program
     {
-      
         static void Main(string[] args)
         {
             //Marshal sınıfı, C# programlarında unmanaged (yönetilmeyen) kod ile

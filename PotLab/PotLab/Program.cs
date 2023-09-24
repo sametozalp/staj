@@ -8,13 +8,8 @@ namespace PotLab
     {
         static void Main(string[] args)
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-
-            // Windows Form'u başlatmak için
             Application.Run(new Form1());
-
-
+            
             Product product = initializeProduct();
             ProductObserver observer = new ProductObserver();
             ProductSubject subject = new ProductSubject();

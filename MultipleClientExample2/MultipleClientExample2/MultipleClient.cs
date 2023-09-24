@@ -57,23 +57,5 @@ namespace MultipleClient
                 myData.data[i] = Convert.ToUInt32(i);
             }
         }
-
-        private void yazdir(String writing)
-        {
-            String writerPath = @"C:\\Users\\Samet\\Desktop\\MultipleClient\\MultipleClient\writing.txt";
-            try
-            {
-                using (StreamWriter writer = new StreamWriter(writerPath, true))
-                {
-                    writer.WriteLine("Mesaj: " + writing + " Zaman: " + DateTime.Now);
-                }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("Hata: " + e.Message);
-            }
-        }
-
-      
     }
 }
