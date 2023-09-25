@@ -34,10 +34,13 @@ namespace PotLab
             Mitov.PlotLab.ScopePoints scopePoints1 = new Mitov.PlotLab.ScopePoints();
             Vcl.VclPen vclPen1 = new Vcl.VclPen();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            Mitov.PlotLab.ScopeChannel scopeChannel2 = new Mitov.PlotLab.ScopeChannel();
+            Mitov.PlotLab.ScopePoints scopePoints2 = new Mitov.PlotLab.ScopePoints();
+            Vcl.VclPen vclPen2 = new Vcl.VclPen();
             Mitov.PlotLab.ScopeDataView scopeDataView1 = new Mitov.PlotLab.ScopeDataView();
             Mitov.PlotLab.DisplayViewBackground displayViewBackground1 = new Mitov.PlotLab.DisplayViewBackground();
             Mitov.PlotLab.DisplayGridLineSettings displayGridLineSettings1 = new Mitov.PlotLab.DisplayGridLineSettings();
-            Vcl.VclPen vclPen2 = new Vcl.VclPen();
+            Vcl.VclPen vclPen3 = new Vcl.VclPen();
             Mitov.PlotLab.DataChartHighlighting dataChartHighlighting1 = new Mitov.PlotLab.DataChartHighlighting();
             Mitov.PlotLab.ChannelItemHighlighting channelItemHighlighting1 = new Mitov.PlotLab.ChannelItemHighlighting();
             Mitov.PlotLab.ChannelItemHighlighting channelItemHighlighting2 = new Mitov.PlotLab.ChannelItemHighlighting();
@@ -113,9 +116,9 @@ namespace PotLab
             Mitov.PlotLab.DisplayAxisCursorSettings displayAxisCursorSettings1 = new Mitov.PlotLab.DisplayAxisCursorSettings();
             Mitov.PlotLab.DisplayGridDirectionalLinesSettings displayGridDirectionalLinesSettings1 = new Mitov.PlotLab.DisplayGridDirectionalLinesSettings();
             Mitov.PlotLab.DisplayGridLineSettings displayGridLineSettings2 = new Mitov.PlotLab.DisplayGridLineSettings();
-            Vcl.VclPen vclPen3 = new Vcl.VclPen();
-            Mitov.PlotLab.DisplayGridLineSettings displayGridLineSettings3 = new Mitov.PlotLab.DisplayGridLineSettings();
             Vcl.VclPen vclPen4 = new Vcl.VclPen();
+            Mitov.PlotLab.DisplayGridLineSettings displayGridLineSettings3 = new Mitov.PlotLab.DisplayGridLineSettings();
+            Vcl.VclPen vclPen5 = new Vcl.VclPen();
             Mitov.PlotLab.AxisFormat axisFormat1 = new Mitov.PlotLab.AxisFormat();
             Mitov.PlotLab.MajorTicks majorTicks1 = new Mitov.PlotLab.MajorTicks();
             Mitov.PlotLab.TicksStart ticksStart1 = new Mitov.PlotLab.TicksStart();
@@ -160,9 +163,9 @@ namespace PotLab
             Mitov.PlotLab.DisplayAxisCursorSettings displayAxisCursorSettings2 = new Mitov.PlotLab.DisplayAxisCursorSettings();
             Mitov.PlotLab.DisplayGridDirectionalLinesSettings displayGridDirectionalLinesSettings2 = new Mitov.PlotLab.DisplayGridDirectionalLinesSettings();
             Mitov.PlotLab.DisplayGridLineSettings displayGridLineSettings4 = new Mitov.PlotLab.DisplayGridLineSettings();
-            Vcl.VclPen vclPen5 = new Vcl.VclPen();
-            Mitov.PlotLab.DisplayGridLineSettings displayGridLineSettings5 = new Mitov.PlotLab.DisplayGridLineSettings();
             Vcl.VclPen vclPen6 = new Vcl.VclPen();
+            Mitov.PlotLab.DisplayGridLineSettings displayGridLineSettings5 = new Mitov.PlotLab.DisplayGridLineSettings();
+            Vcl.VclPen vclPen7 = new Vcl.VclPen();
             Mitov.PlotLab.AxisFormat axisFormat2 = new Mitov.PlotLab.AxisFormat();
             Mitov.PlotLab.MajorTicks majorTicks2 = new Mitov.PlotLab.MajorTicks();
             Mitov.PlotLab.TicksStart ticksStart2 = new Mitov.PlotLab.TicksStart();
@@ -357,7 +360,7 @@ namespace PotLab
             this.scope1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             scopeChannel1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             scopeChannel1.MouseCursor = System.Windows.Forms.Cursors.Default;
-            scopeChannel1.Name = "Product";
+            scopeChannel1.Name = "Price";
             scopePoints1.Brush = new Vcl.VclBrush(System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(0))))), 0);
             vclPen1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             vclPen1.InternalData = ((Vcl.VclBinaryData)(resources.GetObject("vclPen1.InternalData")));
@@ -367,13 +370,26 @@ namespace PotLab
             scopeChannel1.SizeLimit = ((uint)(0u));
             scopeChannel1.XAxisIndex = 0;
             scopeChannel1.YAxisIndex = 0;
+            scopeChannel2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(0)))));
+            scopeChannel2.MouseCursor = System.Windows.Forms.Cursors.Default;
+            scopeChannel2.Name = "Timestamp";
+            scopePoints2.Brush = new Vcl.VclBrush(System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(0))))), 0);
+            vclPen2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            vclPen2.InternalData = ((Vcl.VclBinaryData)(resources.GetObject("vclPen2.InternalData")));
+            scopePoints2.Pen = vclPen2;
+            scopePoints2.Size = ((uint)(3u));
+            scopeChannel2.Points = scopePoints2;
+            scopeChannel2.SizeLimit = ((uint)(0u));
+            scopeChannel2.XAxisIndex = 0;
+            scopeChannel2.YAxisIndex = 0;
             this.scope1.Channels.AddRange(new Mitov.PlotLab.ScopeChannel[] {
-            scopeChannel1});
+            scopeChannel1,
+            scopeChannel2});
             displayViewBackground1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             scopeDataView1.Background = displayViewBackground1;
-            vclPen2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            vclPen2.InternalData = ((Vcl.VclBinaryData)(resources.GetObject("vclPen2.InternalData")));
-            displayGridLineSettings1.Pen = vclPen2;
+            vclPen3.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            vclPen3.InternalData = ((Vcl.VclBinaryData)(resources.GetObject("vclPen3.InternalData")));
+            displayGridLineSettings1.Pen = vclPen3;
             scopeDataView1.Border = displayGridLineSettings1;
             this.scope1.DataView = scopeDataView1;
             channelItemHighlighting1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(0)))));
@@ -521,13 +537,13 @@ namespace PotLab
             scopeXAxis1.Button = viewButtonSettings1;
             scopeXAxis1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             scopeXAxis1.CursorSettings = displayAxisCursorSettings1;
-            vclPen3.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            vclPen3.InternalData = ((Vcl.VclBinaryData)(resources.GetObject("vclPen3.InternalData")));
-            displayGridLineSettings2.Pen = vclPen3;
-            displayGridDirectionalLinesSettings1.Lines = displayGridLineSettings2;
-            vclPen4.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            vclPen4.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             vclPen4.InternalData = ((Vcl.VclBinaryData)(resources.GetObject("vclPen4.InternalData")));
-            displayGridLineSettings3.Pen = vclPen4;
+            displayGridLineSettings2.Pen = vclPen4;
+            displayGridDirectionalLinesSettings1.Lines = displayGridLineSettings2;
+            vclPen5.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            vclPen5.InternalData = ((Vcl.VclBinaryData)(resources.GetObject("vclPen5.InternalData")));
+            displayGridLineSettings3.Pen = vclPen5;
             displayGridDirectionalLinesSettings1.ZeroLine = displayGridLineSettings3;
             scopeXAxis1.DataView = displayGridDirectionalLinesSettings1;
             scopeXAxis1.Font = new Vcl.VclFont(System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255))))), "Arial", 1, 0, true, 11, 0);
@@ -621,13 +637,13 @@ namespace PotLab
             scopeYAxis1.Button = viewButtonSettings2;
             scopeYAxis1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             scopeYAxis1.CursorSettings = displayAxisCursorSettings2;
-            vclPen5.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            vclPen5.InternalData = ((Vcl.VclBinaryData)(resources.GetObject("vclPen5.InternalData")));
-            displayGridLineSettings4.Pen = vclPen5;
-            displayGridDirectionalLinesSettings2.Lines = displayGridLineSettings4;
-            vclPen6.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            vclPen6.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             vclPen6.InternalData = ((Vcl.VclBinaryData)(resources.GetObject("vclPen6.InternalData")));
-            displayGridLineSettings5.Pen = vclPen6;
+            displayGridLineSettings4.Pen = vclPen6;
+            displayGridDirectionalLinesSettings2.Lines = displayGridLineSettings4;
+            vclPen7.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            vclPen7.InternalData = ((Vcl.VclBinaryData)(resources.GetObject("vclPen7.InternalData")));
+            displayGridLineSettings5.Pen = vclPen7;
             displayGridDirectionalLinesSettings2.ZeroLine = displayGridLineSettings5;
             scopeYAxis1.DataView = displayGridDirectionalLinesSettings2;
             scopeYAxis1.Font = new Vcl.VclFont(System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255))))), "Arial", 1, 0, true, 11, 0);
@@ -702,7 +718,6 @@ namespace PotLab
             // timer1
             // 
             this.timer1.Enabled = true;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // waterfall1
             // 
