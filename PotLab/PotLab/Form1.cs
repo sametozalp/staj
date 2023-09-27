@@ -14,10 +14,10 @@ namespace PotLab
         {
             InitializeComponent();
 
-            product = initializeProduct();
             observer = new ProductObserver(scope1);
             subject = new ProductSubject();
             subject.subscribe(observer);
+            product = initializeProduct();
 
             scope1.XAxis.CustomLabel += scope1_XAxis_CustomLabel; // X koordinatının datetime'a göre düzenler.
         }
@@ -25,28 +25,14 @@ namespace PotLab
         {
             Product product = new Product();
             product.productNo = 10;
-            product.price = changePrice();
+            product.price = subject.changePrice();
             product.date = DateTime.Now;
             return product;
         }
 
-        private Random random = new Random();
-        private int changePrice()
-        {
-            return random.Next(20000) + 10;
-        }
-        private void changePriceAndDateTime()
-        {
-            for (int i = 0; i < 10; i++)
-            {
-                product.price = changePrice();
-                product.date = product.date.AddHours(1);
-                subject.priceControl(product);
-            }
-        }
         private void timer1_Tick(object sender, EventArgs e)
         {
-            changePriceAndDateTime();
+            subject.changePriceAndDateTime(ref product);
         }
 
         // X ekseni için özel isimler verilmesini sağlayan fonksiyon

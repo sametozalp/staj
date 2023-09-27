@@ -1,11 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace PotLab
 {
     internal class ProductSubject
     {
         List<ProductObserver> observers = new List<ProductObserver>();
-        private int tempPrice;
         public void subscribe(ProductObserver observer)
         {
             observers.Add(observer);
@@ -31,6 +31,22 @@ namespace PotLab
                 tempPrice = product.price;
                 notify(product);
             }
+        }
+        private int tempPrice;
+
+        public void changePriceAndDateTime(ref Product product)
+        {
+            for (int i = 0; i < 100; i++)
+            {
+                product.price = changePrice();
+                product.date = product.date.AddHours(1);
+                priceControl(product);
+            }
+        }
+        private Random random = new Random();
+        public int changePrice()
+        {
+            return random.Next(20000) + 10;
         }
     }
 }
