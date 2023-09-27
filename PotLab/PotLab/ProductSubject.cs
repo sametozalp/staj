@@ -20,7 +20,7 @@ namespace PotLab
         {
             foreach(var observer in observers)
             {
-                observer.WriteUpdate(product);
+                observer.update(product);
             }
         }
 

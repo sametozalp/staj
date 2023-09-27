@@ -8,24 +8,19 @@ namespace PotLab
 {
     internal class ProductObserver
     {
-        Product product;
-        Mitov.PlotLab.Scope scope1;
-        public ProductObserver(Mitov.PlotLab.Scope scope1)
+        private Product product;
+        private Scope scope1;
+        public ProductObserver(Scope scope1)
         {
             this.scope1 = scope1;
         }
         
-        public System.DateTime m_Date = System.DateTime.Today;
-        private Random m_RandomGen = new Random(123);
-        public void WriteUpdate(Product product)
+        public void update(Product product)
         {
             Console.WriteLine($"Prudoct No: {product.productNo} numaralı ürünün yeni fiyatı: {product.price} olarak güncellendi. Timetamp: {product.date} ");
             this.product = product;
 
-            //scope1.Channels[0].Data.AddXYPoint(updateTimestamp().ToBinary(), updatePrice());
-            scope1.Channels[0].Data.AddXYPoint(m_Date.ToBinary(), updatePrice());
-            m_Date = m_Date.AddDays(1);
-
+            scope1.Channels[0].Data.AddXYPoint(updateHours().ToBinary(), updatePrice());
         }
 
         public int updatePrice()
@@ -33,14 +28,9 @@ namespace PotLab
             return product.price;
         }
 
-        public DateTime updateTimestamp()
+        public DateTime updateHours()
         {
             return product.date;
-        }
-
-        public void addDay(int day)
-        {
-            this.product.date.AddDays(day);
         }
     }
 }

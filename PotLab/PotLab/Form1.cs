@@ -19,7 +19,7 @@ namespace PotLab
             subject = new ProductSubject();
             subject.subscribe(observer);
 
-            scope1.XAxis.CustomLabel += scope1_XAxis_CustomLabel; // X koordinatının datetime tipinde geleceğini söyler
+            scope1.XAxis.CustomLabel += scope1_XAxis_CustomLabel; // X koordinatının datetime'a göre düzenler.
         }
         private Product initializeProduct()
         {
@@ -30,27 +30,31 @@ namespace PotLab
             return product;
         }
 
-        private Random random;
-        private int newPrice;
+        private Random random = new Random();
         private int changePrice()
         {
-            random = new Random();
-            newPrice = random.Next(20000) + 10;
-            return newPrice;
+            return random.Next(20000) + 10;
         }
-        private void timer1_Tick(object sender, EventArgs e)
+        private void changePriceAndDateTime()
         {
-            for (int i = 0; i < 1000; i++)
+            for (int i = 0; i < 10; i++)
             {
                 product.price = changePrice();
-                product.date = DateTime.Now;
+                product.date = product.date.AddHours(1);
                 subject.priceControl(product);
             }
         }
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            changePriceAndDateTime();
+        }
 
+        // X ekseni için özel isimler verilmesini sağlayan fonksiyon
         private void scope1_XAxis_CustomLabel(object sender, Mitov.PlotLab.CustomAxisLabelEventArgs Args)
         {
-            Args.AxisLabel = System.DateTime.FromBinary((long)Math.Round(Args.SampleValue)).ToShortDateString();
+            double point = Args.SampleValue; // X ekseni üzerindeki noktanın değerini temsil eder.
+            DateTime newXPointDateTime = DateTime.FromBinary((long)Math.Round(point)); // tarihi alır yuvarlar
+            Args.AxisLabel = newXPointDateTime.ToShortTimeString(); // tarihi x eksenine atar
         }
     }
 }
