@@ -19,7 +19,11 @@ namespace PotLab
         {
             Console.WriteLine($"Prudoct No: {product.productNo} numaralı ürünün yeni fiyatı: {product.price} olarak güncellendi. Timetamp: {product.date} ");
             this.product = product;
+            draw();
+        }
 
+        private void draw()
+        {
             scope1.Channels[0].Data.AddXYPoint(updateHours().ToBinary(), updatePrice());
         }
 

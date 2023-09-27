@@ -19,7 +19,7 @@ namespace PotLab
             subject.subscribe(observer);
             product = initializeProduct();
 
-            scope1.XAxis.CustomLabel += scope1_XAxis_CustomLabel; // X koordinatının datetime'a göre düzenler.
+            scope1.XAxis.CustomLabel += scope1_XAxis_CustomLabel; // X koordinatını datetime'a göre düzenler.
         }
         private Product initializeProduct()
         {
