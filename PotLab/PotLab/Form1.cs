@@ -15,7 +15,7 @@ namespace PotLab
             InitializeComponent();
 
             product = initializeProduct();
-            observer = new ProductObserver();
+            observer = new ProductObserver(scope1);
             subject = new ProductSubject();
             subject.subscribe(observer);
 
@@ -40,12 +40,11 @@ namespace PotLab
         }
         private void timer1_Tick(object sender, EventArgs e)
         {
-            for (int i = 0; i < 10000; i++)
+            for (int i = 0; i < 1000; i++)
             {
                 product.price = changePrice();
                 product.date = DateTime.Now;
                 subject.priceControl(product);
-                scope1.Channels[0].Data.AddXYPoint(observer.updateTimestamp().ToBinary(), observer.updatePrice());
             }
         }
 
