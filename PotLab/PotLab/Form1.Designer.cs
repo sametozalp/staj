@@ -362,7 +362,6 @@ namespace PotLab
             Mitov.PlotLab.DisplayZoom displayZoom2 = new Mitov.PlotLab.DisplayZoom();
             this.scope1 = new Mitov.PlotLab.Scope(this.components);
             this.waterfall1 = new Mitov.PlotLab.Waterfall(this.components);
-            this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.scope1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.waterfall1)).BeginInit();
@@ -1081,15 +1080,10 @@ namespace PotLab
             displayZoom2.SelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.waterfall1.Zooming = displayZoom2;
             // 
-            // timer2
-            // 
-            this.timer2.Enabled = true;
-            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
-            // 
             // timer1
             // 
             this.timer1.Enabled = true;
-            this.timer1.Interval = 300;
+            this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Form1
@@ -1111,7 +1105,6 @@ namespace PotLab
 
         private Mitov.PlotLab.Scope scope1;
         private Mitov.PlotLab.Waterfall waterfall1;
-        private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.Timer timer1;
     }
 }

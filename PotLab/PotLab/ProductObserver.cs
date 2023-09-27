@@ -7,10 +7,10 @@ namespace PotLab
 {
     internal class ProductObserver
     {
-        Product product = new Product();
+        Product product;
         public void WriteUpdate(Product product)
         {
-            Console.WriteLine($"Prudoct No: {product.productNo} numaralı ürünün yeni fiyatı: {product.price} olarak güncellendi. Timetamp: {product.Timestamp} ");
+            Console.WriteLine($"Prudoct No: {product.productNo} numaralı ürünün yeni fiyatı: {product.price} olarak güncellendi. Timetamp: {product.date} ");
             this.product = product;
             
         }
@@ -20,9 +20,15 @@ namespace PotLab
             return product.price;
         }
 
-        public double updateTimestamp()
+        public DateTime updateTimestamp()
         {
-            return product.Timestamp;
+            Console.WriteLine(product.date);
+            return product.date;
+        }
+
+        public void addDay(int day)
+        {
+            this.product.date.AddDays(day);
         }
     }
 }

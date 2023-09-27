@@ -17,5 +17,5 @@ struct Product
 {
     public int productNo;
     public int price;
-    public Double Timestamp;
+    public DateTime date;
 }
