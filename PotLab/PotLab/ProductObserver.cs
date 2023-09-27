@@ -7,12 +7,12 @@ namespace PotLab
 {
     internal class ProductObserver
     {
-        Product product;
+        Product product = new Product();
         public void WriteUpdate(Product product)
         {
             Console.WriteLine($"Prudoct No: {product.productNo} numaralı ürünün yeni fiyatı: {product.price} olarak güncellendi. Timetamp: {product.Timestamp} ");
             this.product = product;
-
+            
         }
 
         public int updatePrice()

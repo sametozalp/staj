@@ -19,7 +19,60 @@ namespace PotLab
             subject = new ProductSubject();
             subject.subscribe(observer);
 
-            
+
+        }
+        private void scope1_Channels0_ChannelDraw(object sender, Mitov.PlotLab.ChannelDrawEventArgs e)
+        {
+            if (!e.WasChanged)
+                return;
+
+            Mitov.PlotLab.ScopeChannelMarker AMarker;
+            double MaxValue = -20000;
+            double MinValue = 20000;
+            int MinPosition = 0;
+            int MaxPosition = 0;
+            scope1.Channels[0].DrawMarkers.Clear();
+            for (int i = 0; i < e.DataSize; i++)
+            {
+                double DataItem = e.ChannelData[i];
+                if (MaxValue < DataItem)
+                {
+                    MaxValue = DataItem;
+                    MaxPosition = i;
+                }
+
+                if (MinValue > DataItem)
+                {
+                    MinValue = DataItem;
+                    MinPosition = i;
+                }
+
+                if (DataItem > 9000)
+                {
+                    AMarker = new Mitov.PlotLab.ScopeChannelMarker();
+                    AMarker.MarkerGroupIndex = 2;
+                    AMarker.Position = i;
+                    scope1.Channels[0].DrawMarkers.Add(AMarker);
+                }
+
+                if (DataItem < -9000)
+                {
+                    AMarker = new Mitov.PlotLab.ScopeChannelMarker();
+                    AMarker.MarkerGroupIndex = 3;
+                    AMarker.Position = i;
+                    scope1.Channels[0].DrawMarkers.Add(AMarker);
+                }
+            }
+
+            AMarker = new Mitov.PlotLab.ScopeChannelMarker();
+            AMarker.Position = MaxPosition;
+            AMarker.MarkerGroupIndex = 0;
+            scope1.Channels[0].DrawMarkers.Add(AMarker);
+
+            AMarker = new Mitov.PlotLab.ScopeChannelMarker();
+            AMarker.Position = MinPosition;
+            AMarker.MarkerGroupIndex = 1;
+            scope1.Channels[0].DrawMarkers.Add(AMarker);
         }
         private static Product initializeProduct()
         {
@@ -38,24 +91,30 @@ namespace PotLab
             newPrice = random.Next(20000) + 10;
             return newPrice;
         }
-        
+
+        List<double> buffer1 = new List<double>();
+        List<double> buffer2 = new List<double>();
         private void timer2_Tick(object sender, EventArgs e)
         {
-            List<double> buffer1 = new List<double>();
-            List<double> buffer2 = new List<double>();
 
-            for (int i = 0; i < 1000; i++)
+            for (int i = 0; i < 10000; i++)
             {
-                product.price = observer.updatePrice();
+                product.price = changePrice();
                 product.Timestamp = firstZero(DateTime.Now.Ticks);
                 subject.priceControl(product);
                 buffer1.Add(observer.updatePrice());
                 buffer2.Add(observer.updateTimestamp());
+                //scope1.Channels[1].Data.AddXYPoint(buffer1.ToArray()[i], buffer2.ToArray()[i]);
             }
+        }
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            scope1.XInputPins.Add(100);
 
             scope1.Channels[0].Data.AddYData(buffer1.ToArray());
-            //scope1.Channels[1].Data.AddXYData(buffer1.ToArray(), buffer2.ToArray());
-
+            //scope1.Channels[1].Data.AddYData(buffer2.ToArray());
+            //scope1.Channels[1].Data.AddXYData(buffer2.ToArray(), buffer1.ToArray());
+            scope1.Channels[0].ChannelDraw += scope1_Channels0_ChannelDraw;
         }
 
         static long firstZero(long time)
@@ -72,10 +131,7 @@ namespace PotLab
             {
                 return newTicks;
             }
-            else
-            {
-                throw new ArgumentException("Geçersiz Ticks değeri.");
-            }
+            return 0;
         }
 
     }
